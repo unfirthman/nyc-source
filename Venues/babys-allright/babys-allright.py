@@ -6,7 +6,7 @@ import json
 
 # request html, beautiful soup results
 
-url = "https://wl.seetickets.us/BabysAllRightBrooklyn"
+url = "https://wl.seetickets.us/wafform.aspx?_act=Search&AJAX=1&_tab=Event&_sea=WhiteLabelEventSearchV3&s=&ProfileID=6066969&WhiteLabelKey=BabysAllRightBrooklyn&afflky=BabysAllRightBrooklyn&EventStart=&EventStart2=&Tag=&pastevents=&SortBy=all&redrawSearchBar=true"
 result = requests.get(url)
 doc = BeautifulSoup(result.text, "lxml")
 
@@ -14,7 +14,7 @@ print(doc.prettify())
 # parsing by class type
 
 # parsing by event name
-events_block = doc.find_all(class_="event-name")
+events_block = doc.find_all(class_="hover-name")
 # parsing by dates
 dates_block = doc.find_all(class_="hover-date")
 
